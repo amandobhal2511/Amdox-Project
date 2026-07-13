@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Cloud ERP Suite</title>
+  <script>
+    if (localStorage.getItem('erp_auth')) {
+      try {
+        const auth = JSON.parse(localStorage.getItem('erp_auth'));
+        window.location.href = auth.loggedIn ? 'dashboard.html' : 'login.html';
+      } catch { window.location.href = 'login.html'; }
+    } else {
+      window.location.href = 'login.html';
+    }
+  </script>
+</head>
+
+<body>
+  <p style="text-align:center;margin-top:2rem;color:#94a3b8;">Redirecting...</p>
+</body>
+
+</html>

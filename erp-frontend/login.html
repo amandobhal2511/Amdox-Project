@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — AI Cloud ERP Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: { 500: '#6366f1', 600: '#4f46e5' } } } }
+    }
+  </script>
+</head>
+<body class="auth-bg min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-md animate-fade-in">
+    <!-- Logo -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 mb-4 shadow-lg shadow-indigo-500/30">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <h1 class="text-2xl font-bold gradient-text">AI Cloud ERP Suite</h1>
+      <p class="text-slate-400 text-sm mt-2">Sign in to your enterprise dashboard</p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="glass-card p-8">
+      <form id="login-form" novalidate>
+        <div class="mb-5">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="you@company.com" autocomplete="email">
+          <p class="error-msg" id="email-error"></p>
+        </div>
+
+        <div class="mb-5">
+          <label class="form-label" for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" class="form-input" placeholder="••••••••" autocomplete="current-password">
+            <button type="button" class="password-toggle-btn" data-target="password" aria-label="Show password" title="Show password">
+              <svg class="eye-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              <svg class="eye-off-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
+            </button>
+          </div>
+          <p class="error-msg" id="password-error"></p>
+        </div>
+
+        <div class="flex items-center justify-between mb-6">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" id="remember" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-indigo-500 focus:ring-indigo-500">
+            <span class="text-sm text-slate-400">Remember me</span>
+          </label>
+          <a href="#" class="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">Forgot password?</a>
+        </div>
+
+        <button type="submit" id="login-btn" class="btn-gradient w-full py-3 text-sm">Sign In</button>
+      </form>
+
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Don't have an account?
+        <a href="signup.html" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">Create account</a>
+      </p>
+    </div>
+
+    <p class="text-center text-xs text-slate-600 mt-6">© 2026 AI Cloud ERP Suite. All rights reserved.</p>
+  </div>
+
+  <script src="js/toast.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/passwordToggle.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => { Auth.initLogin(); PasswordToggle.init(); });</script>
+</body>
+</html>

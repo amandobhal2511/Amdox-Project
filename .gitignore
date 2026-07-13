@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+backend/node_modules/
+
+# Environment files (important)
+.env
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# VS Code
+.vscode/
+
+# OS junk files
+.DS_Store
+Thumbs.db
